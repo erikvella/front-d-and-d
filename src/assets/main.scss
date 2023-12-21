@@ -1,0 +1,23 @@
+@import '@fontsource/mate-sc';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(57, 17, 17);
+  color: azure;
+  font-family: 'Mate SC', sans-serif;
+  
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.debug{
+  border: 1px solid yellow;
+}
