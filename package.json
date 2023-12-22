@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/aclonica": "^5.0.18",
     "@fontsource/mate-sc": "^5.0.8",
     "axios": "^1.6.2",
     "vue": "^3.3.11"

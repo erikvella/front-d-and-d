@@ -1,45 +1,51 @@
 <script>
+import axios from 'axios';
+import {store} from './data/store'
+import BlogComponent from './components/BlogComponent.vue';
+import Loader from './components/partials/Loader.vue';
+import Navigator from './components/partials/Navigator.vue';
 export default{
   name : 'App',
   data(){
     return{
-      titolo : 'Hello D&D'
+      titolo : 'Hello D&D',
+      isLoaded: false,
+      links: []
     }
+  },
+  components:{
+    BlogComponent,
+    Navigator,
+    Loader
+  },
+  methods:{
+    getApi(endpoint){
+      this.isLoaded = false;
+      axios.get(endpoint)
+           .then(results => {
+            this.isLoaded = true;
+            store.characters = results.data.data;
+            this.links = results.data.links;
+        
+           })
+    }
+  },
+  mounted(){
+    this.getApi(store.apiUrl + 'characters');
   }
+
 }
 </script>
 
 <template>
-<div class="container debug">
+  <Loader v-if="!isLoaded" />
+<div class="container debug" v-else>
   <h1>{{ titolo }}</h1>
+  <BlogComponent />
+  <Navigator :links="links" @callApi="getApi" />
 </div>
 </template>
 
-<style lang="scss" scoped>
-header {
-  line-height: 1.5;
-}
+<style lang="scss">
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>

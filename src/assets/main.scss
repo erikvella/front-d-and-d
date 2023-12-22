@@ -1,4 +1,5 @@
-@import '@fontsource/mate-sc';
+
+@import '@fontsource/aclonica';
 *{
   margin: 0;
   padding: 0;
@@ -8,14 +9,19 @@
 body{
   background-color: rgb(57, 17, 17);
   color: azure;
-  font-family: 'Mate SC', sans-serif;
-  
+  font-family: 'Aclonica', sans-serif;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .container{
   max-width: 1200px;
   margin: 0 auto;
   padding: 25px;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .debug{
