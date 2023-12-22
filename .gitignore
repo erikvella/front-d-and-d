@@ -31,5 +31,5 @@ coverage
 
 *.tsbuildinfo
 
-# ignora un file .js specifico
+# ignora un file .js specifico 
 store.js
