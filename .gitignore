@@ -7,8 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# ignora un file .js specifico
-data\store.js
+
 
 node_modules
 .DS_Store
@@ -31,3 +30,6 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# ignora un file .js specifico 
+store.js
