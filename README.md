@@ -27,4 +27,3 @@ npm run dev
 ```sh
 npm run build
 ```
-ci sono io francisco
