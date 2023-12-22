@@ -32,4 +32,4 @@ coverage
 *.tsbuildinfo
 
 # ignora un file .js specifico
-src\data\store.js
+*.store.js
