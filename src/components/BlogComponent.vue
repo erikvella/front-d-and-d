@@ -20,11 +20,23 @@ export default{
   <h1>{{ titolo }}</h1>
   <ul>
     <li v-for="character in store.characters" :key="character.id">
-      <p>Name: {{ character.name }}</p>
+      <router-link :to="{name:'characterDetail' , params:{slug:character.slug}}">Name: {{ character.name }}</router-link>
       <p>Race: {{ character.race.name }}</p>
     </li>
   </ul>
 </template>
 
 <style lang="scss" scoped>
+a{
+        color: aliceblue;
+        text-decoration: none;
+        text-transform: uppercase;
+        &.active{
+          color: yellow;
+        }
+        &:hover{
+          color: yellow;
+          text-decoration: underline;
+        }
+      }
 </style>

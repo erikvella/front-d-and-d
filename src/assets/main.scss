@@ -10,12 +10,16 @@ body{
   background-color: rgb(57, 17, 17);
   color: azure;
   font-family: 'Aclonica', sans-serif;
-  height: 100vh;
+ 
+
+}
+
+.main-wrapper{
   justify-content: center;
   align-items: center;
   display: flex;
+  height: 100vh;
 }
-
 .container{
   max-width: 1200px;
   margin: 0 auto;

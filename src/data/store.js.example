@@ -4,3 +4,9 @@ export const store = reactive({
   apiUrl : 'http://127.0.0.1:8000/api/',
   characters : []
 });
+
+// per eliminare il file store.js su github inserire da terminale :
+// git rm --cached store.js
+// git commit -m "Stop tracking store.js"
+// git push
+// ovviamente bisognerà inserirlo nel .gitignore per non caricarlo più su github

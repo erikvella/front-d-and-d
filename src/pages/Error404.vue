@@ -1,12 +1,8 @@
   <script>
-import Header from './components/partials/Header.vue'
     export default {
-      name: 'App',
+      name: 'Error404',
       data() {
         return {}
-      },
-      components:{
-        Header
       },
       computed: {},
       mounted() {},
@@ -14,11 +10,9 @@ import Header from './components/partials/Header.vue'
     }
   </script>
 <template>
-  <Header />
-  <div class="main-wrapper">
-    <RouterView />
+  <div>
+    <h1>ERROR 404!</h1>
   </div>
-
 </template>
 
 

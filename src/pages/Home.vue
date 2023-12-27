@@ -1,12 +1,8 @@
   <script>
-import Header from './components/partials/Header.vue'
     export default {
-      name: 'App',
+      name: 'Home',
       data() {
         return {}
-      },
-      components:{
-        Header
       },
       computed: {},
       mounted() {},
@@ -14,11 +10,7 @@ import Header from './components/partials/Header.vue'
     }
   </script>
 <template>
-  <Header />
-  <div class="main-wrapper">
-    <RouterView />
-  </div>
-
+  <div>homeee</div>
 </template>
 
 
