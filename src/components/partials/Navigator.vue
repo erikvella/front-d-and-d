@@ -9,6 +9,9 @@
       },
       methods: {
         callApi(linkUrl){
+          // per evitare la doppia chiamata all'api quando uso il navigator , taglio la stringa dell'Api con substring così da tagliare i primi 26 caratteri e lasciare solo la parte finale 
+          linkUrl = linkUrl.substring(26);
+        
            this.$emit('callApi' , linkUrl);
         }
       },
