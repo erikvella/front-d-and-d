@@ -23,6 +23,9 @@ import Header from './components/partials/Header.vue'
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
+
+@use './scss/main.scss' as *;
+
 
 </style>
