@@ -2,7 +2,14 @@ import { reactive } from "vue";
 
 export const store = reactive({
   apiUrl : 'http://127.0.0.1:8000/api/',
-  characters : []
+  characters : [],
+   paginator:{
+    links: [],
+    firstPageUrl:'',
+    lastPageUrl:'',
+    currentPage:'',
+    lastPage:'',
+  },
 });
 
 // per eliminare il file store.js su github inserire da terminale :
