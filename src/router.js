@@ -5,6 +5,7 @@ import About from "./pages/About.vue";
 import Blog from "./pages/Blog.vue";
 import Contacts from "./pages/Contacts.vue";
 import CharacterDetail from "./pages/CharacterDetail.vue";
+import CharactersRace from "./pages/CharactersRace.vue";
 import Error404 from "./pages/Error404.vue";
 
 const router = createRouter({
@@ -37,6 +38,12 @@ routes:[
      path: '/dettaglio-personaggio/:slug',
      name: 'characterDetail',
      component: CharacterDetail
+  },
+  {
+    // rotta con elemento dinamico come parametro (slug)
+     path: '/personaggi-razza/:race_slug',
+     name: 'charactersRace',
+     component: CharactersRace
   },
 
   // rotta 404 da mettere come ultima rotta

@@ -63,7 +63,9 @@
       <li v-for="skill in character.skills" :key="skill.id">{{ skill.name }} -> {{ skill.description }}</li>
     </ul>
     <h3 v-else>Questo personaggio non ha abilità particolari</h3>
-    <div class="margin">immagine</div>
+    <div class="margin">
+      <img :src="character.picture" alt="">
+    </div>
   </div>
 </template>
 
@@ -72,6 +74,9 @@
 <style lang="scss" scoped>
 .margin{
   margin-top: 12px;
+  img{
+    height: 700px;
+  }
 }
 
 ul{
