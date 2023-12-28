@@ -4,7 +4,7 @@ export default{
   name: 'BlogComponent',
   data(){
     return{
-      titolo: 'Lista dei personaggi giocabili',
+      titolo: 'Characters list',
       store
  }
   },

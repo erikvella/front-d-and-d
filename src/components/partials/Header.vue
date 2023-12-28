@@ -39,21 +39,23 @@
           <router-link :to="{name: 'about'}">about</router-link>
         </li>
         <li>
-          <router-link :to="{name: 'blog'}">lista personaggi</router-link>
+          <router-link :to="{name: 'blog'}">characters list</router-link>
         </li>
         <li>
-          <router-link :to="{name: 'contacts'}">contatti</router-link>
+          <router-link :to="{name: 'contacts'}">contacts</router-link>
         </li>
       </ul>
     </nav>
+
     <div class="form">
       <input
         v-model.trim = "tosearch"
-        placeholder = "Cerca"
+        placeholder = "search character by name"
         type = "text"
         @keyup.enter = "getApi"
       >
     </div>
+
   </header>
 </template>
 
