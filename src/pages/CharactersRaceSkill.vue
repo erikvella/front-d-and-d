@@ -2,33 +2,35 @@
   import axios from 'axios';
   import { store } from '../data/store';
     export default {
-      name: 'CharactersRace',
+      name: 'CharactersRaceSkill',
       data() {
         return {
           characters : [],
-          race: ''
+          type: '',
+          title: ''
         }
       },
       components:{},
       methods: {
         getApi(slug){
-          axios.get(store.apiUrl + 'characters-by-race/' + slug)
+          axios.get(`${store.apiUrl}characters-by-${this.type}/${slug}`)
                .then(res => {
-                console.log(res.data);
-                this.race = res.data.name;
+                 this.title = res.data.name;
+                 console.log(res.data.name);
                 this.characters = res.data.characters;
                })
         }
       },
       mounted() {
-        this.getApi(this.$route.params.race_slug);
+        this.type = this.$route.params.type;
+        this.getApi(this.$route.params.slug);
       },
       computed: {},
     }
   </script>
 <template>
   <div>
-    <h1>Lista dei personaggi che appartengono alla razza {{ race }}</h1>
+    <h1>Lista dei personaggi che appartengono alla {{ type }} {{ title }}</h1>
     <ul>
       <li v-for="character in characters" :key="character.id">
         <router-link :to="{name:'characterDetail' , params:{slug:character.slug}}">Name: {{ character.name }}</router-link>
