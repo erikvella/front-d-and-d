@@ -41,16 +41,6 @@
 .box{
   margin-left: 30px;
   padding: 15px;
-  ul{
-    list-style: none;
-    a{
-      text-decoration: none;
-      color: aliceblue;
-      &:hover{
-        color: yellow;
-        text-decoration: underline;
-      }
-    }
-  }
 }
+
 </style>

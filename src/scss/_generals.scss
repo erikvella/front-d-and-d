@@ -13,18 +13,31 @@ body{
  
 }
 
+ul{
+  list-style: none;
+  a{
+    text-decoration: none;
+    color: aliceblue;
+    &:hover{
+      color: yellow;
+      text-decoration: underline;
+    }
+  }
+}
+
 .main-wrapper{
   justify-content: center;
   align-items: center;
   display: flex;
-  height: 100vh;
+  padding-top: 80px;
+  border: 1px solid red;
 }
 .container{
   max-width: 1200px;
   margin: 0 auto;
   padding: 25px;
-  max-height: 80vh;
   overflow: auto;
+  border: 1px solid yellow;
 }
 
 .debug{

@@ -6,7 +6,7 @@ export default{
   name: 'BlogComponent',
   data(){
     return{
-      titolo: 'Characters list',
+      title: 'Characters list',
       tosearch:'',
       store
  }
@@ -36,8 +36,9 @@ export default{
 
 
 <template>
-  <h1>{{ titolo }}</h1>
-  <div class="form">
+  <div class="col-6">
+    <h1>{{ title }}</h1>
+    <div class="form">
       <input
         v-model.trim = "tosearch"
         placeholder = "search character by name"
@@ -45,12 +46,16 @@ export default{
         @keyup.enter = "getApi"
       >
     </div>
+  </div>
+  
+
   <ul>
     <li v-for="character in store.characters" :key="character.id">
       <router-link :to="{name:'characterDetail' , params:{slug:character.slug}}">Name: {{ character.name }}</router-link>
       <p>Race: {{ character.race.name }}</p>
     </li>
   </ul>
+
 </template>
 
 <style lang="scss" scoped>

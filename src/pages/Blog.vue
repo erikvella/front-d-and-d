@@ -56,15 +56,16 @@ export default{
 
 <template>
   <Loader v-if="!isLoaded" />
-  <div class="d-flex" v-else>
+  <div class="d-flex " v-else>
    
-    <div class="container">
+    <div class="container d-flex flex-column justify-content-between ">
         <!-- <h1>{{ titolo }}</h1> -->
         <BlogComponent />
         <Navigator :links="links" @callApi="getApi" />
     </div>
  
-    <div class="container debug">
+    <!-- blog aside with races and skills lists  -->
+    <div class="container">
       <BlogAside />
     </div>
     
