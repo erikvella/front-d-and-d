@@ -60,11 +60,11 @@ export default{
 
     <div class="card-custom">
       <div class="card-custom__content">
-        <div class="container d-flex flex-column h-100 justify-content-between ">
+        <div class="container d-flex flex-column h-100 ">
 
           <BlogComponent/>
 
-          <Navigator :links="links" @callApi="getApi" />
+          <Navigator v-if="store.characters.length > 3" :links="links" @callApi="getApi" />
 
         </div>
       </div>
