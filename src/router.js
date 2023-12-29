@@ -46,13 +46,13 @@ routes:[
      component: CharactersRaceSkill
   },
 
-  // rotta 404 da mettere come ultima rotta
-  {
-    path: '/:pathMatch(.*)*',
-    // il nome possiamo anche non metterlo
-    name: 'error404',
-    component: Error404
- }
+   // rotta 404 da mettere come ultima rotta
+   {
+      path: '/:pathMatch(.*)*',
+      // il nome possiamo anche non metterlo
+      name: 'error404',
+      component: Error404
+   }
 ]
 });
 
