@@ -5,6 +5,7 @@ import BlogComponent from '../components/BlogComponent.vue';
 import Loader from '../components/partials/Loader.vue';
 import Navigator from '../components/partials/Navigator.vue';
 import BlogAside from '../components/partials/BlogAside.vue';
+
 export default{
   name : 'Blog',
   data(){
@@ -12,7 +13,8 @@ export default{
       titolo : 'Hello D&D',
       isLoaded: false,
       store,
-      links: []
+      links: [],
+    
     }
   },
   components:{
@@ -54,14 +56,18 @@ export default{
 
 <template>
   <Loader v-if="!isLoaded" />
-  <div class="display-flex" v-else>
-    <div class="container debug">
-        <h1>{{ titolo }}</h1>
+  <div class="d-flex" v-else>
+   
+    <div class="container">
+        <!-- <h1>{{ titolo }}</h1> -->
         <BlogComponent />
         <Navigator :links="links" @callApi="getApi" />
     </div>
-
-    <BlogAside />
+ 
+    <div class="container debug">
+      <BlogAside />
+    </div>
+    
 
   </div>
 </template>

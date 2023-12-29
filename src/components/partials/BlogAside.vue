@@ -14,8 +14,10 @@
     }
   </script>
 <template>
-  <div class="box debug">
-      <h1>Lista delle razze:</h1>
+
+<div class="row">
+  <div class="box">
+      <h2>Races list</h2>
       <ul>
         <li v-for="race in store.races" :key="race.id">
         <router-link :to="{name:'charactersRace' , params:{race_slug : race.slug}}">{{ race.name }}</router-link>
@@ -23,12 +25,14 @@
       </ul>
     </div>
 
-    <div class="box debug">
-      <h1>Lista delle skills:</h1>
+    <div class="box">
+      <h2>Skills list</h2>
       <ul>
         <li v-for="skill in store.skills" :key="skill.id">{{ skill.name }}</li>
       </ul>
     </div>
+</div>
+  
 </template>
 
 
