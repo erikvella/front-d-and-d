@@ -1,7 +1,6 @@
 
 @import '@fontsource/aclonica';
 
-
 body{
   background-image: url('/d-e-d-bg.jpg');
   color: azure;
@@ -25,27 +24,24 @@ ul{
   justify-content: center;
   align-items: center;
   display: flex;
-  padding-top: 80px;
+  padding-top: 100px;
 }
-.container{
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: auto;
-}
+
+
 
 .debug{
   border: 1px solid yellow;
 }
 
+// card 
 .card-custom {
   border-radius: 20px;
-  padding: 5px;
-  box-shadow: rgba(5, 143, 90, 0.2) 0 15px 30px -5px;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  box-shadow: rgba(34, 34, 34, 0.9) 0 15px 30px -5px;
+  border: 5px solid rgba(84, 117, 109, 0.9);
 }
 
 .card-custom__content {
-  background: rgba(5, 65, 42, 0.8);
+  background-color: rgba(60, 90, 92, 0.8);
   border-radius: 17px;
   padding: 20px;
   width: 100%;

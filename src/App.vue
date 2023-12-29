@@ -15,7 +15,7 @@ import Header from './components/partials/Header.vue'
   </script>
 <template>
   <Header />
-  
+
   <div class="main-wrapper">
     <RouterView />
   </div>
