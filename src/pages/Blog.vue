@@ -60,9 +60,12 @@ export default{
 
     <div class="card-custom">
       <div class="card-custom__content">
-        <div class="container d-flex flex-column gap-4">
-          <BlogComponent />
+        <div class="container d-flex flex-column h-100 justify-content-between ">
+
+          <BlogComponent/>
+
           <Navigator :links="links" @callApi="getApi" />
+
         </div>
       </div>
     </div>

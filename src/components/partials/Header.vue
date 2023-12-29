@@ -16,6 +16,14 @@
   </script>
 <template>
   <header>
+
+    
+    <div class="logo">
+      <router-link :to="{name: 'home'}">
+        <img src="/logoDandD.png" class="w-100 h-100 object-fit-cover ">
+      </router-link> 
+    </div>
+
     <nav>
       <ul>
         <li>
@@ -48,24 +56,40 @@
   text-align: center;
   width: 100%;
   padding: 15px;
-  ul{
+  display: flex;
+  align-items: center;
+  .logo {
+    width: 60px;
+    float: left;
+    vertical-align: middle;
+    transition: .2s linear;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  nav{
+    vertical-align: middle;
+    width: calc(100% - 60px);
+    ul{
     list-style: none;
     li{
       display: inline-block;
       margin: 0 15px;
+      transition: .2s linear;
+      &:hover{
+        scale: 1.1;
+      }
       a{
         color: aliceblue;
         text-decoration: none;
         text-transform: uppercase;
-        &.active{
+        &.active, &:hover {
           color: yellow;
-        }
-        &:hover{
-          color: yellow;
-          text-decoration: underline;
         }
       }
     }
   }
+  }
+ 
  }
 </style>

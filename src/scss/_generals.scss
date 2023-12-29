@@ -3,6 +3,8 @@
 
 body{
   background-image: url('/d-e-d-bg.jpg');
+  height: 100vh;
+  background-size: cover;
   color: azure;
   font-family: 'Aclonica', sans-serif;
  
@@ -10,15 +12,17 @@ body{
 
 ul{
   list-style: none;
-  a{
-    text-decoration: none;
-    color: aliceblue;
-    &:hover{
-      color: yellow;
-      text-decoration: underline;
-    }
+      a{
+        text-decoration: none;
+        color: aliceblue;
+        &:hover{
+          color: yellow;
+          text-decoration: underline;
+        }
+      }
   }
-}
+  
+
 
 .main-wrapper{
   justify-content: center;

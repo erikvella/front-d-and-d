@@ -37,19 +37,19 @@ export default{
 
 <template>
 
-  <div>
-    <h2>{{ title }}</h2>
-    <div class="form">
-      <input
-        v-model.trim = "tosearch"
-        placeholder = "search character by name"
-        type = "text"
-        @keyup.enter = "getApi"
-      >
-    </div>
+ <div class="div">
+  <h2>{{ title }}</h2>
+
+      
+  <input
+    v-model.trim = "tosearch"
+    placeholder = "search character by name"
+    type = "text"
+    @keyup.enter = "getApi"
+  >
+ </div>
+   
     
-  </div>
-  
 
   <ul>
     <li v-for="character in store.characters" :key="character.id">
@@ -61,16 +61,11 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-a{
-        color: aliceblue;
-        text-decoration: none;
-        text-transform: uppercase;
-        &.active{
-          color: yellow;
-        }
-        &:hover{
-          color: yellow;
-          text-decoration: underline;
-        }
-      }
+
+  li{
+    transition: .2s linear;
+    &:hover{
+      scale: 1.1;
+    }
+  }
 </style>
