@@ -46,6 +46,7 @@ export default{
     placeholder = "search character by name"
     type = "text"
     @keyup.enter = "getApi"
+    style="width: 100%;"
   >
  </div>
    
@@ -61,11 +62,15 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-
+ul{
+  list-style: none;
+  padding: 0;
   li{
+
     transition: .2s linear;
     &:hover{
       scale: 1.1;
     }
+  }
   }
 </style>
