@@ -10,7 +10,6 @@ export default{
   name : 'Blog',
   data(){
     return{
-      titolo : 'Hello D&D',
       isLoaded: false,
       store,
       links: [],
@@ -56,21 +55,27 @@ export default{
 
 <template>
   <Loader v-if="!isLoaded" />
-  <div class="d-flex " v-else>
-   
-    <div class="container d-flex flex-column justify-content-between ">
-        <!-- <h1>{{ titolo }}</h1> -->
-        <BlogComponent />
-        <Navigator :links="links" @callApi="getApi" />
+
+  <div class="d-flex flex-column flex-lg-row gap-2" v-else>
+
+    <div class="card-custom">
+      <div class="card-custom__content">
+        <div class="container d-flex flex-column gap-4">
+          <BlogComponent />
+          <Navigator :links="links" @callApi="getApi" />
+        </div>
+      </div>
     </div>
+   
  
     <!-- blog aside with races and skills lists  -->
-    <div class="container">
-      <BlogAside />
-    </div>
+ 
+    <BlogAside />
+    
     
 
   </div>
+
 </template>
 
 <style lang="scss" scoped>

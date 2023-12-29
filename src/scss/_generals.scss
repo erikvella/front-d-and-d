@@ -1,13 +1,9 @@
 
 @import '@fontsource/aclonica';
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 body{
-  background-color: rgb(57, 17, 17);
+  background-image: url('/d-e-d-bg.jpg');
   color: azure;
   font-family: 'Aclonica', sans-serif;
  
@@ -30,16 +26,28 @@ ul{
   align-items: center;
   display: flex;
   padding-top: 80px;
-  border: 1px solid red;
 }
 .container{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 25px;
   overflow: auto;
-  border: 1px solid yellow;
 }
 
 .debug{
   border: 1px solid yellow;
+}
+
+.card-custom {
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: rgba(5, 143, 90, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+}
+
+.card-custom__content {
+  background: rgba(5, 65, 42, 0.8);
+  border-radius: 17px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
 }

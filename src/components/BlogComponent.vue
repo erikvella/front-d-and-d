@@ -36,7 +36,8 @@ export default{
 
 
 <template>
-  <div class="col-6">
+
+  <div>
     <h1>{{ title }}</h1>
     <div class="form">
       <input
@@ -46,6 +47,7 @@ export default{
         @keyup.enter = "getApi"
       >
     </div>
+    
   </div>
   
 

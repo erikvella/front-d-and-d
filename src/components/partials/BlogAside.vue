@@ -15,8 +15,10 @@
   </script>
 <template>
 
-<div class="row">
-  <div class="box">
+
+
+  <div class="card-custom">
+    <div class="card-custom__content">
       <h2>Races list</h2>
       <ul>
         <li v-for="race in store.races" :key="race.id">
@@ -24,23 +26,25 @@
         </li> 
       </ul>
     </div>
-
-    <div class="box">
-      <h2>Skills list</h2>
-      <ul>
-        <li v-for="skill in store.skills" :key="skill.id">{{ skill.name }}</li>
-      </ul>
+     
     </div>
-</div>
+
+    <div class="card-custom">
+      <div class="card-custom__content">
+        <h2>Skills list</h2>
+        <ul>
+          <li v-for="skill in store.skills" :key="skill.id">{{ skill.name }}</li>
+        </ul>
+      </div>
+    </div>
+    
+
   
 </template>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.box{
-  margin-left: 30px;
-  padding: 15px;
-}
+
 
 </style>
