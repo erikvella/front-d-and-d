@@ -55,8 +55,9 @@ import Loader from '../components/partials/Loader.vue';
 </script>
 
 <template>
+<div class="container">
 
-
+<h3>If you have any idea for a new character do not hesitate to mail us your idea and we will do our best to add it as soon as posible, <br> your ideas are important to us.</h3>
     <form v-if="!success" @submit.prevent="sendForm()" >
       <div v-if="!isLoading" >
         <div>
@@ -87,11 +88,15 @@ import Loader from '../components/partials/Loader.vue';
       
     </form>
     <div v-else>Email Sent</div>
-
+</div>
 </template>
 
 
 <style lang="scss" scoped>
+.container{
+  color:black;
+  text-align: center;  
+}
 form{
   color:black;
   width: 100%;
