@@ -27,6 +27,7 @@
               console.log(store.characters);
               this.lastCharacters = response.data.reverse().slice(0, 8);
               
+              
             })    
         },
         nextCharacters() {
@@ -75,14 +76,14 @@
 
         </li>    
       </ul>
-      
+       <!-- buttons  -->
       <div class="buttons d-flex justify-content-between gap-2">
         <!-- go back -->
         <button  v-if="this.currentIndex > 0 " @click.prevent="prevChar">
           <i class="fa-solid fa-chevron-left fa-fade"></i>
         </button>
         <!-- go ahead -->
-        <button  v-if="this.currentIndex < this.lastCharacters.length" @click.prevent="nextCharacters" >
+        <button  v-if="this.currentIndex < 6" @click.prevent="nextCharacters" >
           <i class="fa-solid fa-chevron-right fa-fade"></i>
         </button>     
       </div>
@@ -117,18 +118,18 @@ ul {
   }
 }
 
-button {
-      width: 50px;
-      height: 50px;
-      line-height: 40px;
-      border-radius: 50%;
-      background-color: rgba($color: #383535, $alpha: .4);
-      color: white;
-      &:hover{
-        background-color: white;
-        color:#383535;
+  button {
+        width: 50px;
+        height: 50px;
+        line-height: 40px;
+        border-radius: 50%;
+        background-color: rgba($color: #383535, $alpha: .4);
+        color: white;
+        &:hover{
+          background-color: white;
+          color:#383535;
+        }
       }
-    }
 
   .debug {
     border: 1px solid red;
