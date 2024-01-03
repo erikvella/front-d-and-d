@@ -1,20 +1,34 @@
   <script>
   import { store } from '../data/store';
-
+  import axios from 'axios';
     export default {
       name: 'Home',
       data() {
         return {
-          store
+          store,
+          lastCharacters: []
         }
       },
       computed: {},
-      mounted() {},
-      methods: {}
+      mounted() {
+        this.getApi();
+      },
+      methods: {
+        getApi(){
+          axios.get(store.apiUrl + 'characters-list')
+            .then(response => {
+              this.lastCharacters = response.data.reverse().slice(0 , 5);
+              console.log(this.lastCharacters);
+       
+            })
+            
+        }
+      }
     }
   </script>
 <template>
   
+  <div class="card-custom">
     <div class="container card-custom__content">
       <h1>D&D characters</h1>
       <p class="lh-base">
@@ -28,14 +42,51 @@
         Go to blog section
       </router-link>
     </div>
+    <div class="container card-custom__content">
+      <h4>Last characters added</h4>
+      <ul class="d-flex flex-column flex-xl-row gap-2">
+
+        <li class="card me-1 p-2 w-100 d-flex justify-content-between" v-for="character in this.lastCharacters" :key="character.id">
+
+          <span>{{ character.name }}</span>
+
+          <div v-if="character.picture" class="image">
+            <img class="img-fluid object-fit-cover w-100 h-100" :src="character.picture">
+          </div>
+
+          <router-link class="btn btn-dark" :to="{name: 'characterDetail', params:{slug:character.slug}}">
+           More info
+          </router-link>
+
+        </li>
+
+      </ul>
+      
+    </div>
+  </div>
+
 
     
 
   
 </template>
 
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss" scoped>
+  .card {
+    transition: .2 all ease;
+    &:hover {
+      scale: 1.1;
+    }
+    .image {
+      width: 150px;
+      height: 250px;
+      padding: 10px 0;
+      overflow: hidden;
+    }
+  }
 
+  .debug {
+    border: 1px solid red;
+  }
 </style>
