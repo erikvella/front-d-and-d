@@ -6,10 +6,16 @@
       data() {
         return {
           store,
-          lastCharacters: []
+          lastCharacters: [],
+          currentIndex: 0
+          
         }
       },
-      computed: {},
+      computed: {
+      displayedCharacters() {
+          return this.lastCharacters.slice(this.currentIndex, this.currentIndex + 3);
+        }
+      },
       mounted() {
         this.getApi();
       },
@@ -17,14 +23,22 @@
         getApi(){
           axios.get(store.apiUrl + 'characters-list')
             .then(response => {
-              this.lastCharacters = response.data.reverse().slice(0 , 5);
-              console.log(this.lastCharacters);
-       
-            })
-            
+              store.characters = response.data;
+              console.log(store.characters);
+              this.lastCharacters = response.data.reverse().slice(0, 8);
+              
+            })    
+        },
+        nextCharacters() {
+          this.currentIndex += 3; 
+        },
+        prevChar(){
+          this.currentIndex -= 3;
         }
+     
+        },
       }
-    }
+    
   </script>
 <template>
   
@@ -42,11 +56,12 @@
         Go to blog section
       </router-link>
     </div>
-    <div class="container card-custom__content">
+    <div class="container card-custom__content d-flex flex-column justify-content-between align-items-center">
       <h4>Last characters added</h4>
-      <ul class="d-flex flex-column flex-xl-row gap-2">
 
-        <li class="card me-1 p-2 w-100 d-flex justify-content-between" v-for="character in this.lastCharacters" :key="character.id">
+      <ul class="d-flex flex-wrap">
+
+        <li class="card m-2 p-2 d-flex justify-content-between align-items-center" v-for="character in this.displayedCharacters" :key="character.id">
 
           <span>{{ character.name }}</span>
 
@@ -58,10 +73,21 @@
            More info
           </router-link>
 
-        </li>
-
+        </li>    
       </ul>
       
+      <div class="buttons d-flex justify-content-between gap-2">
+        <!-- go back -->
+        <button  v-if="this.currentIndex > 0 " @click.prevent="prevChar">
+          <i class="fa-solid fa-chevron-left fa-fade"></i>
+        </button>
+        <!-- go ahead -->
+        <button  v-if="this.currentIndex < this.lastCharacters.length" @click.prevent="nextCharacters" >
+          <i class="fa-solid fa-chevron-right fa-fade"></i>
+        </button>     
+      </div>
+  
+     
     </div>
   </div>
 
@@ -73,7 +99,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+ul {
+  list-style: none;
   .card {
+    width: 270px;
     transition: .2 all ease;
     &:hover {
       scale: 1.1;
@@ -84,7 +113,22 @@
       padding: 10px 0;
       overflow: hidden;
     }
+  
   }
+}
+
+button {
+      width: 50px;
+      height: 50px;
+      line-height: 40px;
+      border-radius: 50%;
+      background-color: rgba($color: #383535, $alpha: .4);
+      color: white;
+      &:hover{
+        background-color: white;
+        color:#383535;
+      }
+    }
 
   .debug {
     border: 1px solid red;
