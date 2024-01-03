@@ -19,6 +19,9 @@ import ContactForm from '../components/ContactForm.vue'
     <div class="card-custom__content">
       <h2>Contact us!</h2>
       <ContactForm />
+      <router-link  :to="{name: 'blog'}" class="btn btn-light mt-5">
+        <i class="fa-solid fa-angle-left"></i>
+      </router-link>
     </div>
   </div>
 </template>

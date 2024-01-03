@@ -44,9 +44,9 @@
         </li>
       </ul>
 
-      <a class="btn btn-light">
+      <router-link  :to="{name: 'blog'}" class="btn btn-light">
         <i class="fa-solid fa-angle-left"></i>
-      </a>
+      </router-link>
 
     </div>
   
