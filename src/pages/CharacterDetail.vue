@@ -11,13 +11,13 @@
           isLoaded: false
         }
       },
-     components:{
-       Loader
-     },
+    components:{
+      Loader
+    },
       methods: {
         getCharacter(slug){
           axios.get(store.apiUrl + 'characters/get-character/' + slug)
-               .then(res => {
+              .then(res => {
                 if(!res.data.success){
                   // se l'API resituisce il fallimento della chiamata reindirizzo alla pagina 404
                   this.$router.push({name: 'error404'});
@@ -30,8 +30,7 @@
                 console.log(this.details);
                 this.character = this.details.character;
                 console.log(this.character);              
-               })
-   
+            })
         }
       },
       mounted() {
@@ -46,6 +45,7 @@
   <div class="container" v-else>
     <h1>Nome del personaggio: {{ character.name }}</h1>
     <em>Razza personaggio: {{ character.race.name }}</em>
+    <p>Creato da: {{ character.user.name }}</p>
     <p class="margin">Altezza: {{ character.height }} m - Peso: {{ character.weight }} Kg</p>
     <p class="margin">Descrizione: {{ character.background }}</p>
     <h2 class="margin">Statistiche del personaggio:</h2>
