@@ -1,8 +1,12 @@
   <script>
+  import { store } from '../data/store';
+
     export default {
       name: 'Home',
       data() {
-        return {}
+        return {
+          store
+        }
       },
       computed: {},
       mounted() {},

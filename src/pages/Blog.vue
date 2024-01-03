@@ -64,7 +64,7 @@ export default{
 
           <BlogComponent/>
 
-          <Navigator v-if="store.characters.length > 3" :links="links" @callApi="getApi" />
+          <Navigator v-if="store.characters.length > 1" :links="links" @callApi="getApi" />
 
         </div>
       </div>
