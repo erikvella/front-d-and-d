@@ -57,31 +57,33 @@ import Loader from '../components/partials/Loader.vue';
 <template>
 <div class="container">
 
-<h3>If you have any idea for a new character do not hesitate to mail us your idea and we will do our best to add it as soon as posible, <br> your ideas are important to us.</h3>
-    <form v-if="!success" @submit.prevent="sendForm()" >
+<h4 class="text-white mb-2">
+  If you have any idea for a new character do not hesitate to mail us your idea and we will do our best to add it as soon as posible, <br> your ideas are important to us.
+</h4>
+    <form v-if="!success" @submit.prevent="sendForm()" class="bg-dark text-white">
       <div v-if="!isLoading" >
-        <div>
+        <div class="mb-2">
           <label for="name">Name</label>
-          <input v-model="name" type="text" name="name" id="name" />
+          <input v-model="name" type="text" name="name" id="name" placeholder="Your name"/>
           <p class="error" v-for="error in errors.name" >{{ error }}</p>
         </div>
-        <div>
+        <div class="mb-2">
           <label for="email">Email</label>
-          <input v-model="email"  type="text" name="email" id="email" />
+          <input v-model="email"  type="text" name="email" id="email" placeholder="Your email" />
           <p class="error" v-for="error in errors.email" >{{ error }}</p>
         </div>
-        <div>
+        <div class="mb-2">
           <label for="subject">Subject</label>
-          <input v-model="subject" type="text" name="subject" id="subject" />
+          <input v-model="subject" type="text" name="subject" id="subject" placeholder="What is the topic you want to talk about?" />
           <p v-for="error in errors.subject"> {{error}}</p>
         </div>  
-        <div>
+        <div class="mb-2">
           <label for="message">Message</label>
-          <textarea v-model="message"  name="message" id="message"></textarea>
+          <textarea v-model="message"  name="message" id="message" placeholder="Your message"></textarea>
           <p class="error" v-for="error in errors.message" >{{ error }}</p>
         </div>
         <div>
-          <button type="submit">Send</button>
+          <button class="" type="submit">Send</button>
         </div>
       </div>
       <Loader v-else />

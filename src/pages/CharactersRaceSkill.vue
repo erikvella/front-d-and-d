@@ -29,19 +29,34 @@
     }
   </script>
 <template>
-  <div>
-    <h1>Lista dei personaggi che appartengono alla {{ type }} {{ title }}</h1>
-    <ul>
-      <li v-for="character in characters" :key="character.id">
-        <router-link :to="{name:'characterDetail' , params:{slug:character.slug}}">Name: {{ character.name }}</router-link>
-      </li>
-    </ul>
+
+  <div class="card-custom d-flex">
+    <div class="card-custom__content">
+
+      <h2>Characters list of the {{ type }} {{ title }}</h2>
+
+      <ul class="mb-5">
+        <li v-for="character in characters" :key="character.id">
+          <router-link :to="{name:'characterDetail' , params:{slug:character.slug}}">
+            <i class="fa-solid fa-angle-right fa-beat-fade"></i>
+             {{ character.name }}
+            </router-link>
+        </li>
+      </ul>
+
+      <router-link  :to="{name: 'blog'}" class="btn btn-light">
+        <i class="fa-solid fa-angle-left"></i>
+      </router-link>
+
+    </div>
+  
   </div>
 </template>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
 ul{
   list-style: none;
   li{

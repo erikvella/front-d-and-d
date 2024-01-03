@@ -52,7 +52,7 @@ export default{
    
     
 
-  <ul>
+  <ul class="my-2">
     <li v-for="character in store.characters" :key="character.id">
       <router-link :to="{name:'characterDetail' , params:{slug:character.slug}}">Name: {{ character.name }}</router-link>
       <p>Race: {{ character.race.name }}</p>

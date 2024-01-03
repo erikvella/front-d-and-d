@@ -15,9 +15,14 @@ import ContactForm from '../components/ContactForm.vue'
 </script>
 
 <template>
-  <div  class="corner-radius">
-    <h1>Contatti</h1>
-    <ContactForm />
+  <div  class="corner-radius card-custom">
+    <div class="card-custom__content">
+      <h2>Contact us!</h2>
+      <ContactForm />
+      <router-link  :to="{name: 'blog'}" class="btn btn-light mt-5">
+        <i class="fa-solid fa-angle-left"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
