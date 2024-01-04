@@ -1,46 +1,51 @@
-  <script>
+<script>
   import { store } from '../data/store';
   import axios from 'axios';
-    export default {
-      name: 'Home',
-      data() {
-        return {
-          store,
-          lastCharacters: [],
-          currentIndex: 0
-          
-        }
-      },
-      computed: {
+  
+  export default {
+    name: 'Home',
+    data() {
+      return {
+        store,
+        lastCharacters: [],
+        currentIndex: 0
+      };
+    },
+    computed: {
       displayedCharacters() {
-          return this.lastCharacters.slice(this.currentIndex, this.currentIndex + 3);
-        }
-      },
-      mounted() {
-        this.getApi();
-      },
-      methods: {
-        getApi(){
-          axios.get(store.apiUrl + 'characters-list')
-            .then(response => {
-              store.characters = response.data;
-              console.log(store.characters);
-              this.lastCharacters = response.data.reverse().slice(0, 8);
-              
-              
-            })    
-        },
-        nextCharacters() {
-          this.currentIndex += 3; 
-        },
-        prevChar(){
-          this.currentIndex -= 3;
-        }
-     
-        },
+        return this.lastCharacters.slice(this.currentIndex, this.currentIndex + 3);
       }
-    
-  </script>
+    },
+    mounted() {
+      this.getApi();
+    },
+    methods: {
+      getApi() {
+        axios.get(store.apiUrl + 'characters-list')
+          .then(response => {
+            store.characters = response.data;
+            console.log(store.characters);
+            this.lastCharacters = response.data.reverse().slice(0, 8);
+          });
+      },
+      nextCharacters() {
+        this.currentIndex += 3;
+      },
+      prevChar() {
+        this.currentIndex -= 3;
+      },
+      selectRandomCharacter() {
+        const randomIndex = Math.floor(Math.random() * store.characters.length);
+        const randomCharacter = store.characters[randomIndex];
+        this.$router.push({
+          name: 'characterDetail',
+          params: { slug: randomCharacter.slug },
+        });
+      },
+    }
+  };
+</script>
+
 <template>
   
   <div class="card-custom">
@@ -56,6 +61,9 @@
       <router-link  :to="{name: 'blog'}" class="btn btn-light">
         Go to blog section
       </router-link>
+      <div @click.prevent="selectRandomCharacter" class="btn btn-light ms-3">
+      Select Random Character
+      </div>
     </div>
     <div class="container card-custom__content d-flex flex-column justify-content-between align-items-center">
       <h4>Last characters added</h4>
@@ -71,7 +79,7 @@
           </div>
 
           <router-link class="btn btn-dark" :to="{name: 'characterDetail', params:{slug:character.slug}}">
-           More info
+            More info
           </router-link>
 
         </li>    
