@@ -66,6 +66,9 @@
     <div class="margin">
       <img :src="character.picture" alt="">
     </div>
+    <router-link  :to="{name: 'blog'}" class="btn btn-light mt-5">
+      <i class="fa-solid fa-angle-left"></i>
+    </router-link>
   </div>
 </template>
 
