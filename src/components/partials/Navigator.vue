@@ -11,8 +11,7 @@
         callApi(linkUrl){
           // per evitare la doppia chiamata all'api quando uso il navigator , taglio la stringa dell'Api con substring così da tagliare i primi 26 caratteri e lasciare solo la parte finale 
           linkUrl = linkUrl.substring(26);
-        
-           this.$emit('callApi' , linkUrl);
+          this.$emit('callApi' , linkUrl);
         }
       },
       computed: {},
@@ -20,8 +19,8 @@
     }
   </script>
 <template>
-  <div class="nav-wrapper">
-    <button v-for="link in links" :key="link.label" v-html="link.label" :disabled="link.active || !link.url" @click="callApi(link.url)"></button>
+  <div class="nav-wrapper ">
+    <button v-for="link in links" :key="link.label" v-html="link.label" :disabled="link.active || !link.url" @click="callApi(link.url)" class="btn btn-light"></button>
   </div>
 </template>
 
@@ -32,10 +31,9 @@
   margin-top: 10px;
   text-align: center;
   button{
-    padding: 12px;
+    padding: 5px;
     margin: 8px;
     border-radius: 12px;
-    
     color: rgb(11, 11, 11);
   }
 }

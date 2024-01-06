@@ -17,14 +17,16 @@ import Header from './components/partials/Header.vue'
   <Header />
 
   <div class="main-wrapper">
-    <RouterView />
+    <div class="content-cs">
+      <RouterView />
+    </div>
   </div>
 
 </template>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style lang="scss" >
 
 @use './scss/main.scss' as *;
 

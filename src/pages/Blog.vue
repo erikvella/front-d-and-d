@@ -54,33 +54,22 @@ export default{
 </script>
 
 <template>
-  <Loader v-if="!isLoaded" />
+    <Loader v-if="!isLoaded" />
 
-  <div class="d-flex flex-column flex-lg-row gap-2" v-else>
+    <div class="container d-flex flex-column flex-md-row gap-2" v-else>
 
-    <div class="card-custom">
-      <div class="card-custom__content">
-        <div class="container d-flex flex-column h-100 ">
-
+      <div class="card-custom d-flex flex-column justify-content-between">
+        <div class="characters">
           <BlogComponent/>
-
+        </div>
+        <div class="navigator">
           <Navigator v-if="store.characters.length > 1" :links="links" @callApi="getApi" />
-
         </div>
       </div>
+      <!-- blog aside with races and skills lists  -->
+      <BlogAside />
     </div>
-   
- 
-    <!-- blog aside with races and skills lists  -->
- 
-    <BlogAside />
-    
-    
-
-  </div>
-
 </template>
 
 <style lang="scss" scoped>
-
 </style>

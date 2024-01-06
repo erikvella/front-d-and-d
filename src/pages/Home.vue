@@ -48,29 +48,29 @@
 
 <template>
   
-  <div class="card-custom">
-    <div class="container card-custom__content">
-      <h1>D&D characters</h1>
-      <p class="lh-base">
-        Welcome adventurers, guardians of realms, and wizards of magical lands ! <br />
-        On this site, you can view the characters from your database. <br />
-      </p>
-      <p>
-        Are you ready to immerse yourselves in an epic world where magic dances with the sword, and legends come to life? "Epic Realms: Unconquerable Legends" is the project that will lead you through timeless adventures in the heart of the Forgotten Realms. In this ambitious Dungeons & Dragons role-playing project, we invite you to explore unknown lands, face legendary monsters, and forge your destiny in a universe rich with mysteries. Whether you're a seasoned knight seeking fame, a cunning wizard in search of ancient secrets, or a stealthy rogue hungry for hidden treasures, "Epic Realms" offers a tailor-made gaming experience for every type of hero. 
-      </p>
+  <div class="container card-custom">
+    <h1>D&D characters</h1>
+    <p class="lh-base">
+      Welcome adventurers, guardians of realms, and wizards of magical lands ! <br />
+      On this site, you can view the characters from your database. <br />
+    </p>
+    <p>
+      Are you ready to immerse yourselves in an epic world where magic dances with the sword, and legends come to life? "Epic Realms: Unconquerable Legends" is the project that will lead you through timeless adventures in the heart of the Forgotten Realms. In this ambitious Dungeons & Dragons role-playing project, we invite you to explore unknown lands, face legendary monsters, and forge your destiny in a universe rich with mysteries. Whether you're a seasoned knight seeking fame, a cunning wizard in search of ancient secrets, or a stealthy rogue hungry for hidden treasures, "Epic Realms" offers a tailor-made gaming experience for every type of hero. 
+    </p>
+    <div class="gap-3 d-flex mb-3">
       <router-link  :to="{name: 'blog'}" class="btn btn-light">
         Go to blog section
       </router-link>
-      <div @click.prevent="selectRandomCharacter" class="btn btn-light ms-3">
-      Select Random Character
+      <div @click.prevent="selectRandomCharacter" class="btn btn-light">
+        Play a Random Character
       </div>
     </div>
-    <div class="container card-custom__content d-flex flex-column justify-content-between align-items-center">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
       <h4>Last characters added</h4>
 
-      <ul class="d-flex flex-wrap">
+      <ul class="d-flex flex-wrap justify-content-center align-items-center">
 
-        <li class="card m-2 p-2 d-flex justify-content-between align-items-center" v-for="character in this.displayedCharacters" :key="character.id">
+        <li class="card m-3 p-2 d-flex align-items-center" v-for="character in this.displayedCharacters" :key="character.id">
 
           <span>{{ character.name }}</span>
 
@@ -84,7 +84,7 @@
 
         </li>    
       </ul>
-       <!-- buttons  -->
+      <!-- buttons  -->
       <div class="buttons d-flex justify-content-between gap-2">
         <!-- go back -->
         <button  v-if="this.currentIndex > 0 " @click.prevent="prevChar">
@@ -95,8 +95,6 @@
           <i class="fa-solid fa-chevron-right fa-fade"></i>
         </button>     
       </div>
-  
-     
     </div>
   </div>
 

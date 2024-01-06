@@ -37,7 +37,7 @@ export default{
 
 <template>
 
- <div class="div">
+ <div>
   <h2>{{ title }}</h2>
 
       

@@ -42,46 +42,51 @@
   </script>
 <template>
   <Loader v-if="!isLoaded" />
-  <div class="container" v-else>
-    <h1>Nome del personaggio: {{ character.name }}</h1>
-    <em>Razza personaggio: {{ character.race.name }}</em>
-    <p>Creato da: {{ character.user.name }}</p>
-    <p class="margin">Altezza: {{ character.height }} m - Peso: {{ character.weight }} Kg</p>
-    <p class="margin">Descrizione: {{ character.background }}</p>
-    <h2 class="margin">Statistiche del personaggio:</h2>
-    <ul>
-      <li>Classe armatura: {{ character.armor_class }}</li>
-      <li>for: {{ character.for }}</li>
-      <li>des: {{ character.des }}</li>
-      <li>cos: {{ character.cos }}</li>
-      <li>int: {{ character.int }}</li>
-      <li>sag: {{ character.sag }}</li>
-      <li>car: {{ character.car }}</li>
-    </ul>
-    <h2 class="margin">Abilità speciali del personaggio:</h2>
-    <ul v-if="character.skills.length > 0">
-      <li v-for="skill in character.skills" :key="skill.id">{{ skill.name }} -> {{ skill.description }}</li>
-    </ul>
-    <h3 v-else>Questo personaggio non ha abilità particolari</h3>
-    <div class="margin">
-      <img :src="character.picture" alt="">
+  <div class="container card-custom d-lg-flex gap-lg-3" v-else>
+    <div class="info">
+      <h2>Character Name: {{ character.name }}</h2>
+      <em>Race: {{ character.race.name }}</em>
+      <p>Author: {{ character.user.name }}</p>
+      <p>Height: {{ character.height }} m - Weight: {{ character.weight }} Kg</p>
+      <p>Description: {{ character.background }}</p>
+      <h3>Stats:</h3>
+      <ul>
+        <li>Armor Class: {{ character.armor_class }}</li>
+        <li>Strength: {{ character.for }}</li>
+        <li>Dexterity: {{ character.des }}</li>
+        <li>Constitution: {{ character.cos }}</li>
+        <li>Intelligence: {{ character.int }}</li>
+        <li>Wisdom: {{ character.sag }}</li>
+        <li>Charisma: {{ character.car }}</li>
+      </ul>
+      <h3>Special Abilities:</h3>
+      <ul v-if="character.skills.length > 0">
+        <li v-for="skill in character.skills" :key="skill.id">{{ skill.name }} -> {{ skill.description }}</li>
+      </ul>
+      <h4 v-else>This charatecter does not have any ability</h4>
+      <router-link  :to="{name: 'blog'}" class="btn btn-light mt-5">
+        <i class="fa-solid fa-angle-left"></i>
+      </router-link>
     </div>
-    <router-link  :to="{name: 'blog'}" class="btn btn-light mt-5">
-      <i class="fa-solid fa-angle-left"></i>
-    </router-link>
+    <div class="image">
+      <img :src="character.picture" alt="" class="w-100 h-100 object-fit-cover rounded-3">
+    </div>
   </div>
+  
 </template>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.margin{
-  margin-top: 12px;
-  img{
-    height: 700px;
+.info ,
+.image{
+  width: 100%;
+}
+@media screen and (min-width:576px){
+  .info , .image{
+  width: 49%;
   }
 }
-
 ul{
   list-style: none;
 }

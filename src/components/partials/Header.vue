@@ -50,7 +50,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 
- header{
+header{
   background-color:  rgba(60, 90, 92, 0.8);
   position: fixed;
   text-align: center;
@@ -58,6 +58,7 @@
   padding: 15px;
   display: flex;
   align-items: center;
+  height: 100px;
   .logo {
     width: 60px;
     float: left;
@@ -71,25 +72,25 @@
     vertical-align: middle;
     width: calc(100% - 60px);
     ul{
-    list-style: none;
-    li{
-      display: inline-block;
-      margin: 0 15px;
-      transition: .2s linear;
+      list-style: none;
+      margin: 0;
+      li{
+        display: inline-block;
+        margin: 0 15px;
+        transition: .2s linear;
       &:hover{
         scale: 1.1;
-      }
+        }
       a{
         color: aliceblue;
         text-decoration: none;
         text-transform: uppercase;
         &.active, &:hover {
           color: yellow;
-        }
+          }
       }
     }
   }
   }
- 
- }
+}
 </style>

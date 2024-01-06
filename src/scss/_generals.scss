@@ -12,6 +12,9 @@ body{
 
 ul{
   list-style: none;
+  padding: 0;
+  li{
+    margin-top: 10px;
       a{
         text-decoration: none;
         color: aliceblue;
@@ -20,35 +23,31 @@ ul{
           text-decoration: underline;
         }
       }
+    }
   }
   
 
 
 .main-wrapper{
   justify-content: center;
-  align-items: center;
   display: flex;
   padding-top: 100px;
+  height: 100vh;
+  width: 100%;
+  .content-cs{
+    padding-top:50px ;
+    overflow-y: auto;
+    width: 100%;
+  }
 }
-
-
-
-.debug{
-  border: 1px solid yellow;
-}
-
 // card 
 .card-custom {
   border-radius: 20px;
   box-shadow: rgba(34, 34, 34, 0.9) 0 15px 30px -5px;
   border: 5px solid rgba(84, 117, 109, 0.9);
-  
-}
-
-.card-custom__content {
-  background-color: rgba(60, 90, 92, 0.8);
-  border-radius: 17px;
+  clear: both;
   padding: 20px;
-  width: 100%;
-  height: 100%;
+  background-color: rgba(60, 90, 92, 0.8);
+  width: 90%;
+  margin: 0 auto;
 }

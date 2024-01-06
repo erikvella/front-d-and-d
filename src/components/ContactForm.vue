@@ -55,11 +55,11 @@ import Loader from '../components/partials/Loader.vue';
 </script>
 
 <template>
-<div class="container">
+<div class="container d-flex flex-column align-items-center">
 
-<h4 class="text-white mb-2">
-  If you have any idea for a new character do not hesitate to mail us your idea and we will do our best to add it as soon as posible, <br> your ideas are important to us.
-</h4>
+  <h4 class="text-white mb-4 w-75 ">
+    If you have any idea for a new character do not hesitate to mail us your idea and we will do our best to add it as soon as posible, your ideas are important to us.
+  </h4>
     <form v-if="!success" @submit.prevent="sendForm()" class="bg-dark text-white">
       <div v-if="!isLoading" >
         <div class="mb-2">
