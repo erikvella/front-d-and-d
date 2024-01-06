@@ -1,22 +1,22 @@
 <script>
   import { store } from '../data/store';
   import axios from 'axios';
-  
+
   export default {
     name: 'Home',
     data() {
       return {
         store,
         lastCharacters: [],
-        currentIndex: 0
+        currentIndex: 0,
       };
     },
     computed: {
       displayedCharacters() {
         return this.lastCharacters.slice(this.currentIndex, this.currentIndex + 3);
-      }
+      },
     },
-    mounted() {
+    created() {
       this.getApi();
     },
     methods: {
@@ -26,6 +26,9 @@
             store.characters = response.data;
             console.log(store.characters);
             this.lastCharacters = response.data.reverse().slice(0, 8);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
           });
       },
       nextCharacters() {
@@ -42,7 +45,7 @@
           params: { slug: randomCharacter.slug },
         });
       },
-    }
+    },
   };
 </script>
 
@@ -58,12 +61,16 @@
       Are you ready to immerse yourselves in an epic world where magic dances with the sword, and legends come to life? "Epic Realms: Unconquerable Legends" is the project that will lead you through timeless adventures in the heart of the Forgotten Realms. In this ambitious Dungeons & Dragons role-playing project, we invite you to explore unknown lands, face legendary monsters, and forge your destiny in a universe rich with mysteries. Whether you're a seasoned knight seeking fame, a cunning wizard in search of ancient secrets, or a stealthy rogue hungry for hidden treasures, "Epic Realms" offers a tailor-made gaming experience for every type of hero. 
     </p>
     <div class="gap-3 d-flex mb-3">
-      <router-link  :to="{name: 'blog'}" class="btn btn-light">
-        Go to blog section
+      <router-link :to="{name: 'blog'}" class="button" type="button">
+        <span class="button-text" contenteditable="">Go to Characters List</span>
+        <span class="button-background"></span>
+        <span class="button-border"></span>
       </router-link>
-      <div @click.prevent="selectRandomCharacter" class="btn btn-light">
-        Play a Random Character
-      </div>
+      <div @click.prevent="selectRandomCharacter" class="button" type="button">
+        <span class="button-text" contenteditable="">Play a Random Character</span>
+        <span class="button-background"></span>
+        <span class="button-border"></span>
+    </div>
     </div>
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <h4>Last characters added</h4>
@@ -96,12 +103,22 @@
         </button>     
       </div>
     </div>
+
   </div>
 
 
     
 
   
+  <svg style="position: absolute;" width="0" height="0">
+  <filter id="remove-black" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              -1 -1 -1 0 1" result="black-pixels"></feColorMatrix>
+    <feComposite in="SourceGraphic" in2="black-pixels" operator="out"></feComposite>
+  </filter>
+</svg>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
