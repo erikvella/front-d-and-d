@@ -61,12 +61,12 @@
       Are you ready to immerse yourselves in an epic world where magic dances with the sword, and legends come to life? "Epic Realms: Unconquerable Legends" is the project that will lead you through timeless adventures in the heart of the Forgotten Realms. In this ambitious Dungeons & Dragons role-playing project, we invite you to explore unknown lands, face legendary monsters, and forge your destiny in a universe rich with mysteries. Whether you're a seasoned knight seeking fame, a cunning wizard in search of ancient secrets, or a stealthy rogue hungry for hidden treasures, "Epic Realms" offers a tailor-made gaming experience for every type of hero. 
     </p>
     <div class="gap-3 d-flex mb-3">
-      <router-link :to="{name: 'blog'}" class="button" type="button">
+      <router-link :to="{name: 'blog'}" class="button d-flex align-items-center" type="button">
         <span class="button-text" contenteditable="">Go to Characters List</span>
         <span class="button-background"></span>
         <span class="button-border"></span>
       </router-link>
-      <div @click.prevent="selectRandomCharacter" class="button" type="button">
+      <div @click.prevent="selectRandomCharacter" class="button d-flex align-items-center" type="button">
         <span class="button-text" contenteditable="">Play a Random Character</span>
         <span class="button-background"></span>
         <span class="button-border"></span>
