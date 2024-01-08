@@ -43,6 +43,9 @@
 <template>
   <Loader v-if="!isLoaded" />
   <div class="container card-custom d-lg-flex gap-lg-3" v-else>
+    <div class="image mb-4 mb-md-0">
+        <img :src="character.picture" alt="" class="w-100 h-100 object-fit-cover rounded-3">
+    </div>
     <div class="info">
       <h2>Character Name: {{ character.name }}</h2>
       <em>Race: {{ character.race.name }}</em>
@@ -67,9 +70,6 @@
       <router-link  :to="{name: 'blog'}" class="btn btn-light mt-5">
         <i class="fa-solid fa-angle-left"></i>
       </router-link>
-    </div>
-    <div class="image">
-      <img :src="character.picture" alt="" class="w-100 h-100 object-fit-cover rounded-3">
     </div>
   </div>
   

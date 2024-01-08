@@ -16,15 +16,15 @@
   </script>
 <template>
   <header>
-    <div class="d-flex w-100 h-100 align-items-center justify-content-between">
-      <div class="logo h-100 ">
+    <div class="d-flex w-100 h-100 align-items-center justify-content-md-between justify-content-center mx-md-3 me-4">
+      <div class="logo h-100 w-md-25">
         <router-link :to="{name: 'home'}" class="d-flex h-100">
           <img src="/logoDandD.png" class="h-100">
         </router-link> 
       </div>
 
-      <nav class="justify-self-center">
-        <ul>
+      <nav>
+        <ul class="gap-3 align-items-center">
           <li>
             <router-link :to="{name: 'home'}">home</router-link>
           </li>
@@ -40,7 +40,7 @@
         </ul>
       </nav>
 
-      <div class="log gap-2 d-md-flex d-none ali">
+      <div class="log w-md-25 gap-2 d-md-flex d-none">
         <a href="http://127.0.0.1:8000/login" class="button" type="button">
           <span class="button-text" contenteditable="">LogIn</span>
           <span class="button-background"></span>
@@ -67,12 +67,11 @@ header{
   position: fixed;
   text-align: center;
   width: 100%;
-  padding: 15px;
+  padding: 15px 0px;
   display: flex;
   align-items: center;
   height: 100px;
   .logo {
-    width: 270px;
     img{
       transition: .2s linear;
       &:hover {
@@ -86,9 +85,7 @@ header{
       display:flex;
       list-style: none;
       margin: 0;
-      gap:13px;
       li{
-        display: inline-block;
         a{
           transition: .2s linear;
           color: aliceblue;
@@ -102,9 +99,7 @@ header{
       }
     }
   }
-  .log{
-    width: 270px;
-  }
+
 }
 .debug{
   border: 3px solid red;
